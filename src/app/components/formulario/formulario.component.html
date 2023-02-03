@@ -1,41 +1,55 @@
 <div class="card">
   <div class="card-body">
-    <form [formGroup]="formularioLogin">
-      <h3>Quiero Registrarme</h3>
+    <form [formGroup]="formulario">
+      <h3 class="titulo">Quiero Registrarme</h3>
       <div class="mb-3">
         <label for="Nombre" class="form-label">Nombre(s)</label>
         <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre" id="Nombre"
-          aria-describedby="emailHelp">
+          aria-describedby="Nombre">
       </div>
 
       <div class="mb-3">
         <label for="Apellidos" class="form-label">Apellidos</label>
         <input formControlName="apellidos" type="text" class="form-control" placeholder="Apellidos" id="Apellidos"
-          aria-describedby="emailHelp">
+          aria-describedby="Apellidos">
+      </div>
+      <div class="mb-3">
+        <label for="nacimiento" class="form-label">Fecha de nacimiento:</label>
+        <input type="date" id="nacimiento" class="form-control" name="nacimiento">
+      </div>
+
+      <div class="mb-3">
+        <label for="Telefono" class="form-label">Telefono</label>
+        <input type="text" class="form-control" placeholder="Telefono" id="Telefono" aria-describedby="Telefono">
       </div>
 
       <div class="mb-3">
         <label for="Correo" class="form-label">Correo</label>
-        <input formControlName="correo" type="email" class="form-control" id="Correo" aria-describedby="emailHelp">
+        <input formControlName="correo" type="email" class="form-control" placeholder="Correo" id="Correo"
+          aria-describedby="Correo">
       </div>
 
       <div class="mb-3">
         <label for="Contraseña" class="form-label">Contraseña</label>
-        <input formControlName="contraseña" type="password" class="form-control" id="Contraseña">
+        <input formControlName="contraseña" type="password" class="form-control" placeholder="Contraseña"
+          id="Contraseña">
       </div>
 
       <div class="mb-3">
         <label for="Confirmar" class="form-label">Confirmar Contraseña</label>
-        <input formControlName="confirmar" type="password" class="form-control" id="Confirmar">
+        <input formControlName="confirmar" type="password" class="form-control" placeholder="Confirmar Contraseña"
+          id="Confirmar">
       </div>
 
       <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="Terminos">
-        <label formControlName="terminos" class="form-check-label" for="Terminos">Acepto terminos y
+        <input type="checkbox" checked="checked" class="form-check-input" id="Terminos" disabled>
+        <label class="form-check-label" for="Terminos">Acepto terminos y
           condiciones</label>
       </div>
+      <div class="boton">
+        <button type="submit" class="btn btn-primary btn-lg" (click)="enviar">Enviar</button>
 
-      <button type="submit" class="btn btn-primary" (click)="login">Registrame</button>
+      </div>
     </form>
   </div>
 </div>
