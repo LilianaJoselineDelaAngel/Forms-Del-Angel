@@ -3,16 +3,26 @@
     <form [formGroup]="formulario">
       <div class="row">
         <h3 class="titulo">Quiero Registrarme</h3>
+        <div></div>
         <div class="mb-3 col-6">
           <label for="Nombre" class="form-label">Nombre(s)</label>
           <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre" id="Nombre"
             aria-describedby="Nombre">
+          <div class="invalid" *ngIf="formulario.controls['nombre'].errors?.['required'] ">
+            ingrese un nombre
+          </div>
+          <div class="invalid" *ngIf="formulario.controls['nombre'].errors?.['pattern'] ">
+            Los caracteres no son validos
+          </div>
         </div>
 
         <div class="mb-3 col-6">
           <label for="Apellidos" class="form-label">Apellidos</label>
           <input formControlName="apellidos" type="text" class="form-control" placeholder="Apellidos" id="Apellidos"
             aria-describedby="Apellidos">
+          <div class="invalid" *ngIf="formulario.controls['apellidos'].errors?.['required'] ">
+            Ingrese su apellido
+          </div>
         </div>
         <div class="mb-3">
           <label for="nacimiento" class="form-label">Fecha de nacimiento:</label>
@@ -28,27 +38,47 @@
           <label for="Correo" class="form-label">Correo</label>
           <input formControlName="correo" type="email" class="form-control" placeholder="Correo" id="Correo"
             aria-describedby="Correo">
+          <div class="invalid" *ngIf="formulario.controls['correo'].errors?.['required'] ">
+            Ingrese su correo
+          </div>
+          <div class="invalid" *ngIf="formulario.controls['correo'].errors?.['pattern'] ">
+            Los caracteres no son validos
+          </div>
         </div>
 
         <div class="mb-3  col-6">
           <label for="Contraseña" class="form-label">Contraseña</label>
           <input formControlName="contraseña" type="password" class="form-control" placeholder="Contraseña"
             id="Contraseña">
+          <div class="invalid" *ngIf="formulario.controls['contraseña'].errors?.['required'] ">
+            Ingrese su contraseña
+          </div>
+          <div class="invalid" *ngIf="formulario.controls['contraseña'].errors?.['pattern'] ">
+            Los caracteres no son validos
+          </div>
+          <div class="invalid" *ngIf="formulario.controls['contraseña'].errors?.['minLength'] ">
+            el minimo de caracteres es 8
+          </div>
         </div>
 
         <div class="mb-3  col-6">
           <label for="Confirmar" class="form-label">Confirmar Contraseña</label>
           <input formControlName="confirmar" type="password" class="form-control" placeholder="Confirmar Contraseña"
             id="Confirmar">
-        </div>
 
+        </div>
+        <div class="col-12">
+          <div class="invalid">
+            {{Mensaje}}
+          </div>
+        </div>
         <div class="mb-3 form-check">
           <input type="checkbox" checked="checked" class="form-check-input" id="Terminos" disabled>
           <label class="form-check-label" for="Terminos">Acepto terminos y
             condiciones</label>
         </div>
         <div class="boton">
-          <button type="submit" class="btn btn-primary btn-lg" (click)="enviar">Enviar</button>
+          <button type="submit" class="btn btn-primary btn-lg" (click)="enviar()">Enviar</button>
 
         </div>
       </div>
