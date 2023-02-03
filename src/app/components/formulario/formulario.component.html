@@ -1,0 +1,16 @@
+<form [formGroup]="formularioLogin">
+  <div class="mb-3">
+    <label for="Correo" class="form-label">Correo</label>
+    <input formControlName="correo" type="email" class="form-control" id="Correo" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="Contraseña" class="form-label">Contraseña</label>
+    <input formControlName="contraseña" type="password" class="form-control" id="Contraseña">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="Terminos">
+    <label formControlName="terminos" class="form-check-label" for="Terminos">Acepto terminos y
+      condiciones</label>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="login">Registrame</button>
+</form>
