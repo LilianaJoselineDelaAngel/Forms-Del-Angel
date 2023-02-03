@@ -1,16 +1,41 @@
-<form [formGroup]="formularioLogin">
-  <div class="mb-3">
-    <label for="Correo" class="form-label">Correo</label>
-    <input formControlName="correo" type="email" class="form-control" id="Correo" aria-describedby="emailHelp">
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="formularioLogin">
+      <h3>Quiero Registrarme</h3>
+      <div class="mb-3">
+        <label for="Nombre" class="form-label">Nombre(s)</label>
+        <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre" id="Nombre"
+          aria-describedby="emailHelp">
+      </div>
+
+      <div class="mb-3">
+        <label for="Apellidos" class="form-label">Apellidos</label>
+        <input formControlName="apellidos" type="text" class="form-control" placeholder="Apellidos" id="Apellidos"
+          aria-describedby="emailHelp">
+      </div>
+
+      <div class="mb-3">
+        <label for="Correo" class="form-label">Correo</label>
+        <input formControlName="correo" type="email" class="form-control" id="Correo" aria-describedby="emailHelp">
+      </div>
+
+      <div class="mb-3">
+        <label for="Contraseña" class="form-label">Contraseña</label>
+        <input formControlName="contraseña" type="password" class="form-control" id="Contraseña">
+      </div>
+
+      <div class="mb-3">
+        <label for="Confirmar" class="form-label">Confirmar Contraseña</label>
+        <input formControlName="confirmar" type="password" class="form-control" id="Confirmar">
+      </div>
+
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="Terminos">
+        <label formControlName="terminos" class="form-check-label" for="Terminos">Acepto terminos y
+          condiciones</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary" (click)="login">Registrame</button>
+    </form>
   </div>
-  <div class="mb-3">
-    <label for="Contraseña" class="form-label">Contraseña</label>
-    <input formControlName="contraseña" type="password" class="form-control" id="Contraseña">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="Terminos">
-    <label formControlName="terminos" class="form-check-label" for="Terminos">Acepto terminos y
-      condiciones</label>
-  </div>
-  <button type="submit" class="btn btn-primary" (click)="login">Registrame</button>
-</form>
+</div>
